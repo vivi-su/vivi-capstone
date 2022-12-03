@@ -6,8 +6,9 @@
     margin:0 auto;
     background:url(../../assets/images/drum-bg.jpg) ;
     width:80%;
-    height: 60%;
+    height: 60vh;
     background-size: cover;
+    background-color: green;
 
     &__keys{
         @include flex(column,center,center);
@@ -41,5 +42,14 @@
         transform:scale(1.1);
         border-color:#F24495;
         box-shadow:0 0 10px grey;
+    }
+}
+
+@include medium{
+    .drum{
+          &__keys{
+          @include flex(row,center,center);
+        }
+      
     }
 }

@@ -13,22 +13,24 @@ import HomePage from "./pages/home-page/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route index path="/" element={<EntryPage />} />
-          <Route path="/play/disney" element={<DisneyPage />} />
+    <section className="App">
+      <section className="App__container">
+        <BrowserRouter>
+          <Routes>
+            <Route index path="/" element={<EntryPage />} />
+            <Route path="/play/disney" element={<DisneyPage />} />
 
-          <Route path="/play" element={<HomePage />}>
-            <Route index element={<Navigate replace to="drum" />} />
-            <Route path="drum" element={<Drum />} />
-            <Route path="draw" element={<Draw />} />
-            <Route path="whack" element={<Whack />} />
-          </Route>
-          <Route path="*" element={<EntryPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+            <Route path="/play" element={<HomePage />}>
+              <Route index element={<Navigate replace to="drum" />} />
+              <Route path="drum" element={<Drum />} />
+              <Route path="draw" element={<Draw />} />
+              <Route path="whack" element={<Whack />} />
+            </Route>
+            <Route path="*" element={<EntryPage />} />
+          </Routes>
+        </BrowserRouter>
+      </section>
+    </section>
   );
 }
 

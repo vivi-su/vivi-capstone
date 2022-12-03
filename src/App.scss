@@ -4,10 +4,7 @@
 
 .App{
 background-color: #57B7F2;
-background-image: linear-gradient(0deg, #57B7F2 0%, #91CDF2 100%);
-width: 100%;
-height:100vh;
-
+background-image: linear-gradient(0deg, #57B7F2 0%, #ffffff 100%);
 cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='58' viewport='0 0 100 100' style='fill:black;font-size:40px;'><text y='50%'>🤏</text></svg>")
       16 0,
     auto;
@@ -17,6 +14,11 @@ a, button {
 cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='58' viewport='0 0 100 100' style='fill:black;font-size:40px;'><text y='50%'>👆</text></svg>")
       16 0,
     auto;
+
+    &_container{
+    max-width:1280px;
+    margin: 0 auto;
+    }
 }
 
 

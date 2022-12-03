@@ -3,23 +3,46 @@
 @use "./src/styles/colors" as *;
 
 
-.home{
-  @include flex(column, center, center);
+.entry{
+
+  @include flex(column,space-between, center);
+ 
   width:100%;
   height:100vh;
   color:$color-primary;
 
 
-   
+
+    &__planet{
+      width:15em;
+      height:15rem;
+      align-self: end;
+      margin-right: 2rem;
+      // position: relative;
+      // top:6rem;
+   }
+
+   &__star{
+      width:15em;
+      height:15rem;
+      align-self: start;
+      margin-left: 2rem;
+   }
+
     &__logo{
         width:100%;
         max-width:15rem; 
     }
 
+    &__bg{
+    width:100%;
+   }
+
     &__title{
-      text-align: center;
-      position: relative;
-      top:-5rem;
+     text-align: center;
+     padding-top: 8rem;
+     position: absolute;
+     z-index: 999;
     }
 
     &__tag{
@@ -50,8 +73,28 @@
           position:relative;
           top:0;
           left:0;
+          background-color: $color-hover;
         }
       
 
     }
+}
+
+@include medium{
+  .entry{
+
+   &__planet{
+      width:20em;
+      height:20rem;  
+      margin-right: 10rem;
+   }
+
+    &__star{
+      margin-left: 10rem;
+    }
+
+    &__title{
+      padding-bottom: 5rem;
+    }
+  }
 }
