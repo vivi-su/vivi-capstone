@@ -5,10 +5,10 @@
 .drum{
     margin:0 auto;
     background:url(../../assets/images/drum-bg.jpg) ;
-    width:80%;
-    height: 60vh;
+    width:100%;
+    height:50vh;
     background-size: cover;
-    background-color: green;
+
 
     &__keys{
         @include flex(column,center,center);

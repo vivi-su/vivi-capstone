@@ -93,7 +93,7 @@ function Pad ({clip}){
 
 
   const playSound = () => {
-    console.log("ref.current", ref.current);
+    // console.log("ref.current", ref.current);
     setActive(true);
     setTimeout(()=>setActive(false),200);
     const audioTag = ref.current;
