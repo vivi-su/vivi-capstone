@@ -94,17 +94,39 @@
     background-position:0;
 
    &__planet{
-      width:20em;
-      height:20rem;  
-      margin-right: 10rem;
+      width:25em;
+      height:25rem;  
+      margin-right: 20rem;
    }
 
     &__star{
-      margin-left: 10rem;
+      width: 20rem;
+      height:20rem;
+      margin-left: 20rem;
     }
 
     &__title{
       padding-bottom: 5rem;
     }
+
+    &__logo{
+        width:100%;
+        max-width:25rem; 
+    }
+
+    &__tag{
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding-top: 2rem;
+    }
+
+    &__explore{
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 5rem;
+
+      padding:1rem 6rem;
   }
+}
+
 }

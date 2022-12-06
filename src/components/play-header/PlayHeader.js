@@ -7,18 +7,23 @@ export default function PlayHeader(){
         <section>
           <ul>
             <Link to={"drum"}>
-              <li>Drumming on the Keyboard</li>
+              <li className="home__li">Drumming on the Keyboard</li>
+              <li className="home__li home__li--z">Drumming on the Keyboard</li>
             </Link>
             <Link to={"draw"}>
-              <li>Drawing on Canvas</li>
+              <li className="home__li">Drawing on Canvas</li>
+              <li className="home__li home__li--z">Drawing on Canvas</li>
             </Link>
             <Link to={"whack"}>
-              <li>Whack a mole</li>
+              <li className="home__li">Whack a mole</li>
+              <li className="home__li home__li--z">Whack a mole</li>
             </Link>
           </ul>
           <button>Give me a Joke</button>
         </section>
-        <Link to={"/"}><button>Back</button></Link>
+        <Link to={"/"}>
+          <button>Back</button>
+        </Link>
       </>
     );
 }
