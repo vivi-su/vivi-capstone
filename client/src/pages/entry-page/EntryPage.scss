@@ -1,0 +1,132 @@
+@use "./src/styles/basic" as *;
+@use "./src/styles/mixins" as *;
+@use "./src/styles/colors" as *;
+
+
+.entry{
+
+  @include flex(column,space-between, center);
+
+  width:100%;
+  height:100vh;
+
+  background-image: url(../../assets/images/first-page-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+  
+  color:$color-primary;
+
+  &__wrapper{
+  @include flex(row, space-between, center);
+  width:100%;
+  }
+
+  &__planet{
+      width:15em;
+      height:15rem;
+      align-self: end;
+      margin-right: 2rem;
+   }
+
+   &__star{
+      width:15em;
+      height:15rem;
+      align-self: start;
+      margin-left: 4rem;
+      position: relative;
+      top:10rem;
+   }
+
+    &__logo{
+        width:100%;
+        max-width:15rem; 
+    }
+
+    &__bg{
+    width:100%;
+   }
+
+    &__title{
+     text-align: center;
+     padding-top: 8rem;
+     position: absolute;
+     z-index: 999;
+    }
+
+    &__tag{
+      font-size: 1.3rem;
+      font-weight: 600;
+      padding-top: 2rem;
+    }
+
+    &__explore{
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 3rem;
+
+      padding:0.8rem 4rem;
+      outline:0;
+      border:2px solid $color-primary;
+      background-color: $color-button;
+      position:absolute;
+
+      &--z{
+      position:relative;
+      top:-3px;
+      left:-3px;
+      }
+
+    
+        &--z:hover{
+          position:relative;
+          top:0;
+          left:0;
+          background-color: $color-hover;
+        }
+      
+
+    }
+}
+
+@include medium{
+  .entry{
+    background-position:0;
+
+   &__planet{
+      width:25em;
+      height:25rem;  
+      margin-right: 20rem;
+   }
+
+    &__star{
+      width: 20rem;
+      height:20rem;
+      margin-left: 20rem;
+    }
+
+    &__title{
+      padding-bottom: 5rem;
+    }
+
+    &__logo{
+        width:100%;
+        max-width:25rem; 
+    }
+
+    &__tag{
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding-top: 2rem;
+    }
+
+    &__explore{
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-top: 5rem;
+
+      padding:1rem 6rem;
+  }
+}
+
+}
