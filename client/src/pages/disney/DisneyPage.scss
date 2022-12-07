@@ -1,9 +1,18 @@
   
-  .Disney{
+  .disney{
+  // width:100%;
+  // height:100vh;
+  // background-image: url(../../assets/images/first-page-bg.svg);
+  // background-repeat: no-repeat;
+  // background-size: fill;
+  // background-position: bottom;
 
-    &__back{
-     background-color: red;
-    }
+
+  &__cartoon-img{
+    width:100px;
+    height:100px;
+  }
+
   }
   
  

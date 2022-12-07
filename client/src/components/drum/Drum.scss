@@ -18,17 +18,19 @@
     }
 
     &__key{
+        @include flex(column, center,center);
         text-align: center;
         border: .2rem solid $color-primary;
         background: rgba(0,0,0,0.4);
         margin:1rem;
         padding:0.4rem 0.4rem;
-        width:5rem;
-        height:4rem;
+        width:3rem;
+        height:3rem;
         color:$color-secondary;
-         font-weight: 600;
-        border-radius: 0.2rem;
+        font-weight: 600;
+        border-radius: 50%;
         transition: all 0.07s;
+        font-size: 1.8rem;
     }
 
     &__sound{
@@ -41,15 +43,22 @@
     &__playing{
         transform:scale(1.1);
         border-color:#F24495;
-        box-shadow:0 0 10px grey;
+        box-shadow:0 0 10px #F24495;
     }
 }
 
 @include medium{
     .drum{
-          &__keys{
+        &__keys{
           @include flex(row,center,center);
         }
+
+        &__key{
+  
+        width:8rem;
+        height:8rem;
+     
+    }
       
     }
 }
