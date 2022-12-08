@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { audioClips } from "../../utils/clips";
+import { audioClips } from "../../utils/utils";
 import "./Drum.scss";
 
 export default function Drum (){

@@ -1,3 +1,7 @@
+export const DISNEY_URL = `https://api.disneyapi.dev/characters`;
+
+export const selectedByID_URL = (disneyID) => `${DISNEY_URL}/${disneyID}`;
+
 export const audioClips = [
   {
     keyCode: 81,
@@ -94,17 +98,5 @@ export const audioClips = [
     keyTrigger: "Z",
     id: "Punchy-Kick",
     url: "https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3",
-  },
-  {
-    keyCode: 88,
-    keyTrigger: "X",
-    id: "Side-Stick",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3",
-  },
-  {
-    keyCode: 67,
-    keyTrigger: "C",
-    id: "Snare",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
-  },
+  }
 ];
