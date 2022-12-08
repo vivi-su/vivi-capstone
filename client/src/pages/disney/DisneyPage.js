@@ -30,9 +30,7 @@ export default function DisneyPage() {
 
   return (
     <>
-        <div className="backdrop">
-          <Disney items={items} detail={detail} show={show} setShow={setShow}/>
-        </div>
+        <Disney items={items} detail={detail} show={show} setShow={setShow} />
     </>
   );
 }

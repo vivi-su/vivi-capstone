@@ -7,15 +7,24 @@ export default function Disney({items, detail, show, setShow}) {
     <>
       <main className="disney">
         <section className="disney__container">
-          <div className="disney__img-group">
+          <div
+            className={
+              show ? " disney__img-group--greyout" : "disney__img-group"
+            }
+          >
             {items.map((item) => (
               <NavLink to={`/play/disney/${item._id}`} key={uuidv4()}>
-                <img
-                  src={item.imageUrl}
-                  alt={item.name}
-                  className="disney__cartoon-img"
-                  onClick={() => setShow(true)}
-                ></img>
+
+                <div
+                  className= "disney__cartoon-img-wrapper"
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    className={show?"disney__cartoon-img--greyout":"disney__cartoon-img"}
+                    onClick={() => setShow(true)}
+                  ></img>
+                </div>
               </NavLink>
             ))}
           </div>
@@ -25,7 +34,9 @@ export default function Disney({items, detail, show, setShow}) {
         </section>
         {show && (
           <section className="disney__pop">
-            <p onClick={() => setShow(false)} className="disney__pop-x">x</p>
+            <p onClick={() => setShow(false)} className="disney__pop-x">
+              x
+            </p>
             <h1>Name:{detail.name}</h1>
             <p>TV SHOWS: {detail.tvShows}</p>
           </section>
