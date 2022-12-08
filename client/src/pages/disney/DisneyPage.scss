@@ -1,18 +1,91 @@
-  
+@use "./src/styles/basic" as *;
+@use "./src/styles/mixins" as *;
+@use "./src/styles/colors" as *;
+
+
+// .backdrop{
+//   position:relative;
+//   top:0;
+//   left:0;
+//   width:100%;
+//   height: 100%;
+//   background-color: rgba(0,0,0,0.5);
+//   z-index:999;
+// }
+
   .disney{
-  // width:100%;
-  // height:100vh;
-  // background-image: url(../../assets/images/first-page-bg.svg);
-  // background-repeat: no-repeat;
-  // background-size: fill;
-  // background-position: bottom;
+  width:100%;
+  height:100%;
+  background-image: url(../../assets/images/first-page-bg.svg);
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-position: bottom;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  button{
+    all:unset;
+  }
+
+  &__pop{
+  background-color: $color-hover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  padding:2rem 3rem;
+  border:2px solid #000;
+  font-size: 3rem;
+  }
+
+  &__container{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #000;
+  }
+
+  &__img-group{
+  background-color: #fff;
+
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  }
+
+  &__btn{
+  background-color: $color-button;
+  display: block;
+  text-align: center;
+  padding:1.5rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-top: 2px solid #000;
+  }
 
 
   &__cartoon-img{
-    width:100px;
-    height:100px;
+    width:10rem;
+    height:10rem;
+    border-radius: 50%;
+    margin:0.5rem;
+  }
+
+  &__cartoon-img, &__btn{
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='58' viewport='0 0 100 100' style='fill:black;font-size:40px;'><text y='50%'>👆</text></svg>")
+      16 0,
+    auto;
   }
 
   }
   
- 
+ @include large{
+
+.disney{
+
+  height:100vh;
+
+}
+ }

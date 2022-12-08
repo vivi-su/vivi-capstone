@@ -1,3 +1,7 @@
+export const DISNEY_URL = `https://api.disneyapi.dev/characters`;
+
+export const selectedByID_URL = (disneyID) => `${DISNEY_URL}/${disneyID}`;
+
 export const audioClips = [
   {
     keyCode: 81,
