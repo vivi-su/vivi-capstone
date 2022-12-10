@@ -1,10 +1,9 @@
 import {Link} from "react-router-dom";
+import {ReactComponent as Logo} from "../../assets/images/logo.svg";
+import {motion} from "framer-motion";
 import "./EntryPage.scss";
-import {ReactComponent as Logo} from "../../assets/images/logo.svg"
-// import bg from "../../assets/images/first-page-bg.svg";
 import planet from "../../assets/images/planet.svg";
 import star from "../../assets/images/star.svg";
-import {motion} from "framer-motion";
 
 export default function EntryPage (){
     return (
@@ -35,7 +34,6 @@ export default function EntryPage (){
               </button>
             </Link>
           </div>
-          {/* <img src={bg} alt="Background kids" className="entry__bg"></img> */}
         </section>
       </>
     );

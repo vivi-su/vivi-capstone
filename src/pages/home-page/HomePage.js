@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { BACK_END } from "../../utils/utils";
 import axios from "axios";
 import TopHeader from "../../components/top-header/TopHeader";
 import PlayHeader from "../../components/play-header/PlayHeader";
 import "./HomePage.scss";
-
-const BACK_END = process.env.REACT_APP_BACKEND_URL;
 
 export default function HomePage() {
   const [jokes, setJokes] = useState([]);

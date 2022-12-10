@@ -1,0 +1,22 @@
+@use "./src/styles/basic" as *;
+@use "./src/styles/mixins" as *;
+@use "./src/styles/colors" as *;
+
+.header{
+    @include flex(row, flex-end, center);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding: 3rem 4rem;
+    
+
+    &__li{
+        margin-left: 3rem;
+        font-weight: 600;
+    }
+}
+
+@include medium{
+    .header{
+    font-size: 1.8rem;
+    }
+}
