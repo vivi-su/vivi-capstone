@@ -30,6 +30,7 @@ export default function Header (){
                 console.log("ok", res.data.success);
                 alert("Sweet! You have successfully signed up!");
                 setShowSignup(false);
+                setShowSignin(true);
             }
         }).catch((err)=>{
             console.log(err);

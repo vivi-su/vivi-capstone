@@ -25,5 +25,21 @@ export default function Profile({ haveToken, setHaveToken }) {
       });
   }, []);
 
-  return <>{haveToken && <p> Hello {userInfo.name}</p>}</>;
+ const handleSignout = ()=>{
+    sessionStorage.removeItem("token");
+    window.location.reload(false);
+ }
+
+  return (
+    <>
+      {haveToken && (
+        <div>
+          <p>Hello {userInfo.name}</p>
+          <button onClick={handleSignout}>Sign Out</button>
+        </div>
+      )}
+        
+
+    </>
+  );
 }
