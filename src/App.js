@@ -11,31 +11,32 @@ import HomePage from "./pages/home-page/HomePage";
 
 function App() {
 
+  
+
   return (
     <section className="App">
-      <section className="App__container">
-        <BrowserRouter>
+     
+        <section className="App__container">
+          <BrowserRouter>
             <Header />
-          <Routes>
-            <Route index path="/" element={<EntryPage />} />
-            <Route path="/signup" element={<EntryPage />} />
-            <Route path="/signin" element={<EntryPage />} />
-            <Route path="/profile" element={<EntryPage />} />
-
-            <Route path="/play/disney" element={<DisneyPage />} />
-            <Route path="/play/disney/:disneyID" element={<DisneyPage />} />
-
-            <Route path="/play" element={<HomePage />}>
-              <Route index element={<Navigate replace to="drum" />} />
-              <Route path="drum" element={<Drum />} />
-              <Route path="draw" element={<Draw />} />
-              <Route path="whack" element={<Whack />} />
-            </Route>
-            <Route path="*" element={<EntryPage />} />
-          </Routes>
-        </BrowserRouter>
+            <Routes>
+              <Route index path="/" element={<EntryPage />} />
+              <Route path="/signup" element={<EntryPage />} />
+              <Route path="/signin" element={<EntryPage />} />
+              <Route path="/profile" element={<EntryPage />} />
+              <Route path="/play/disney" element={<DisneyPage />} />
+              <Route path="/play/disney/:disneyID" element={<DisneyPage />} />
+              <Route path="/play" element={<HomePage />}>
+                <Route index element={<Navigate replace to="drum" />} />
+                <Route path="drum" element={<Drum />} />
+                <Route path="draw" element={<Draw />} />
+                <Route path="whack" element={<Whack />} />
+              </Route>
+              <Route path="*" element={<EntryPage />} />
+            </Routes>
+          </BrowserRouter>
+        </section>
       </section>
-    </section>
   );
 }
 

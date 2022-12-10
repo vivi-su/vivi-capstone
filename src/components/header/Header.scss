@@ -4,19 +4,82 @@
 
 .header{
     @include flex(row, flex-end, center);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     padding: 3rem 4rem;
-    
 
     &__li{
         margin-left: 3rem;
         font-weight: 600;
     }
+
+    //---------signup section----------
+
+    &__signup{
+        input{
+            all:unset;
+         }
+        width:30%;
+        margin: 0 auto;
+        padding:1rem 0 0;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        text-align: center;
+        background-color: #fff;
+        border:2px solid #000;
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        right:50%; 
+        transform: translate(50% ,-40%);
+    }
+    
+    &__signup-title{
+     padding-bottom:1rem;
+     border-bottom: 2px solid #000;
+     letter-spacing: 0.2rem;
+     font-weight: 600;
+    }
+
+    &__form-signup{
+      margin-top: 1rem;
+    }
+
+    &__form-box{
+     margin-bottom:1rem;
+     margin-left: 2rem;
+     margin-right: 2rem;
+     @include flex(column, space-between, center);
+    }
+
+    &__btn{
+      background-color: #fff;
+      border:0;
+      padding: 1rem 0;
+      width:100%;
+      border-top:2px solid #000 ;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover{
+        background-color: $color-button;
+      }
+    }
 }
+
+
 
 @include medium{
     .header{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+
+    &__form-box{
+     margin-bottom:1rem;
+     margin-left: 3rem;
+     margin-right: 3rem;
+     @include flex(row, space-between, center);
+    }
     }
 }

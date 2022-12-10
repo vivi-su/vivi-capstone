@@ -68,42 +68,62 @@ export default function Header (){
 
     return (
       <>
-        {!haveToken&&<nav>
-          <ul className="header">
-            <Link to="/signup">
-              <li
-                className="header__li"
-                onClick={() => setShowSignup(!showSignup)}
-              >
-                Sign up
-              </li>
-            </Link>
-            <Link to="/signin">
-              <li
-                className="header__li"
-                onClick={() => setShowSignin(!showSignin)}
-              >
-                Sign in
-              </li>
-            </Link>
-          </ul>
-        </nav>}
+        {!haveToken && (
+          <nav>
+            <ul className="header">
+              <Link to="/signup">
+                <li
+                  className="header__li"
+                  onClick={() => setShowSignup(!showSignup)}
+                >
+                  Sign up
+                </li>
+              </Link>
+              <Link to="/signin">
+                <li
+                  className="header__li"
+                  onClick={() => setShowSignin(!showSignin)}
+                >
+                  Sign in
+                </li>
+              </Link>
+            </ul>
+          </nav>
+        )}
 
         <Profile haveToken={haveToken} setHaveToken={setHaveToken} />
 
-        {!showSignin&&showSignup && (
-          <div>
-            <h1>Sign Up</h1>
-            <form onSubmit={(e) => handleSignup(e)}>
-              Username:
-              <input type="text" name="username" />
-              Name:
-              <input type="text" name="name" />
-              Password:
-              <input type="password" name="password" />
-              <button type="submit">Sign Up</button>
-            </form>
-          </div>
+        {!showSignin && showSignup && (
+     
+            <div className="header__signup">
+              <h1 className="header__signup-title">Sign Up</h1>
+              <form
+                onSubmit={(e) => handleSignup(e)}
+                className="header__form-signup"
+              >
+                <div className="header__form-box">
+                  <label htmlFor="username">Username:</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Nick Name"
+                  />
+                </div>
+                <div className="header__form-box">
+                  Name:
+                  <input type="text" name="name" placeholder="Full Name" />
+                </div>
+                <div className="header__form-box">
+                  Password:
+                  <input type="password" name="password" placeholder="Password" />
+                </div>
+                <button type="submit" className="header__btn">
+                  Submit
+                </button>
+              </form>
+            </div>
+        
         )}
 
         {showSignin && (

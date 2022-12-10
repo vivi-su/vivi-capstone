@@ -1,0 +1,28 @@
+@use "./src/styles/basic" as *;
+@use "./src/styles/mixins" as *;
+@use "./src/styles/colors" as *;
+
+.profile{
+    @include flex(row, flex-end, center);
+    width:100%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 3rem 4rem;
+
+    &__p{
+        margin-left: 3rem;
+        font-weight: 600;
+    }
+
+    &__btn{
+        all:unset;
+        margin-left: 3rem;
+        font-weight: 600;
+    }
+}
+
+@include medium{
+    .profile{
+    font-size: 1.4rem;
+    }
+}
