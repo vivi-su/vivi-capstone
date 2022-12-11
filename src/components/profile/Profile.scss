@@ -25,6 +25,12 @@
 
 @include medium{
     .profile{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    }
+}
+
+@include large{
+    .profile{
+    font-size: 2.25rem;
     }
 }
