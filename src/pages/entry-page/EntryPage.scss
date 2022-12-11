@@ -137,14 +137,31 @@
 
 @include large{
   .entry{
-    &__planet{
-     
-      margin-right: 20rem;
-   }
 
-    &__star{
-     
-      margin-left: 20rem;
-    }
+  &__wrapper{
+  padding-top: 3rem;
   }
+
+  &__logo{
+        width:100%;
+        max-width:35rem; 
+  }
+
+  &__tag{
+    font-size: 2.25rem;
+  }
+
+  &__planet{
+      margin-right: 20rem;
+  }
+
+  &__star{ 
+      margin-left: 20rem;
+  }
+
+  &__explore{
+    font-size: 2.25rem;
+  }
+}
+
 }

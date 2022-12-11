@@ -5,14 +5,13 @@
 .topHeader{
   margin-top:2rem;
 
-  &__li{
-  all:unset;
+  &__p{
   font-size: 1.2rem;
   text-transform: uppercase;
   position: relative;
   z-index: 999;
-  top:3.4rem;
-  left:-8.6rem;
+  top:4rem;
+  left:-8rem;
   font-weight: 600;
   }
 
@@ -20,9 +19,6 @@
  display: flex;
 }
 
- &__span{
-  padding-left: 0rem;
- }
 
   &__img{
   width:12rem;  
@@ -39,14 +35,23 @@
 @include medium{
   .topHeader{
     
-      &__li{
+    &__p{
+        font-size: 1.6rem;
         top:4rem;
-        left:-9.2rem;
-      }
+        left:-8.5rem;
+    }
 
-       &__span{
-          padding-left: 1rem;
-      }
+  }
+}
+
+@include large{
+  .topHeader{
+    
+    &__p{
+        font-size: 1.8rem;
+        top:4rem;
+        left:-8.8rem;
+    }
 
   }
 }

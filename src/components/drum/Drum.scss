@@ -62,3 +62,14 @@
       
     }
 }
+
+
+@include large{
+    .drum{
+
+    &__key{
+        font-size: 3.375rem;
+    }
+      
+    }
+}

@@ -51,7 +51,7 @@ export default function HomePage() {
                   key="joke"
                   initial={{ x: "50%", opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: "50%", opacity: 0, transition:{duration:0.1} }}
+                  exit={{ x: "50%", opacity: 0, transition: { duration: 0.1 } }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
                 >
                   {joke}
@@ -61,14 +61,33 @@ export default function HomePage() {
           </div>
           <Outlet />
           <PlayHeader />
+          <section className="home__joke-wrap">
+            <div className="home__btn-wrap">
+              <button onClick={() => getJoke()} className="home__btn">
+                Give me a Joke
+              </button>
+              <button
+                onClick={() => getJoke()}
+                className="home__btn home__btn--y"
+              >
+                Give me a Joke
+              </button>
+            </div>
+            {show && (
+              <div className="home__btn-wrap">
+                <button onClick={() => setShow(false)} className="home__btn">
+                  I don't want a Joke
+                </button>
+                <button
+                  onClick={() => setShow(false)}
+                  className="home__btn home__btn--y"
+                >
+                  I don't want a Joke
+                </button>
+              </div>
+            )}
 
-          <button onClick={() => getJoke()}>Give me a Joke</button>
-          {show && (
-            <button onClick={() => setShow(false)}>I don't want a Joke</button>
-          )}
-          <Link to={"/"}>
-            <button>Back</button>
-          </Link>
+          </section>
         </section>
       </main>
     </>

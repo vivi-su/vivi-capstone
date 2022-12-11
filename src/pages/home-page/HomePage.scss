@@ -39,6 +39,29 @@
      @include flex(column,flex-start,flex-start);
   }
 
+  &__row-wrap{
+  @include flex(row,space-between,flex-start);
+
+  }
+
+  &__back-btn{
+    all:unset;
+    margin-top: 2rem;
+  }
+
+  &__back-img{
+  width:3rem;
+  height:3rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover{
+    path{
+      fill:$color-hover;
+    }
+
+  }
+}
+
   &__li {
   max-width:25rem;
   text-align: center;
@@ -61,9 +84,43 @@
           top:-27px;
           left:0px;
           background-color: $color-hover;
+        } 
+}
+
+&__joke-wrap{
+  @include flex(column,center,flex-start);
+}
+
+&__btn-wrap{
+@include flex(column,center,flex-start);
+}
+
+  &__btn {
+  max-width:25rem;
+  text-align: center;
+  background: $color-accent;
+  color: #000;
+  padding: 0.4rem 2rem;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+      
+    &--y{
+      position:relative;
+      top:-32px;
+      left:-4px;
+  }
+
+          &--y:hover{
+          position:relative;
+          top:-71px;
+          left:0px;
+          background-color: $color-hover;
         }
   
 }
+
 
   &__top{
     margin:0 auto;
@@ -78,7 +135,7 @@
 
 @include medium{
   .home{
-      ul{
+    ul{
         @include flex(row,flex-start, center);
       }
 
@@ -87,16 +144,15 @@
     padding-right: 2rem;
   }
 
+   &__back-img{
+    width:5rem;
+    height:5rem;
+   }
+
   &__li {
   max-width:25rem;
-  text-align: center;
-  background: #DFF250;
-  color: #000;
   padding: 1rem 2rem;
-  border: 2px solid #000;
   font-size: 1.3rem;
-  font-weight: 600;
-  text-transform: uppercase;
   margin:0.5rem;
       
   &--z{
@@ -111,8 +167,38 @@
           left:0px;
           background-color: $color-hover;
         }
-  
 }
+
+&__joke-wrap{
+  @include flex(row,flex-start,center);
+  position: relative;
+  top:-4rem;
+}
+
+  &__btn {
+  max-width:25rem;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  margin:0.5rem;
+      
+  &--y{
+      position:relative;
+      top:-55px;
+      left:-4px;
+  }
+
+          &--y:hover{
+          position:relative;
+          top:-50px;
+          left:0px;
+          background-color: $color-hover;
+        }
+}
+
+ &__joke{
+    font-size: 1.8rem;
+  }
+
   }
 }
 
@@ -122,11 +208,54 @@
   &__major{
     padding-left: 4rem;
     padding-right: 4rem;
-    // width: 100%;
-    // position: absolute;
-    // top:43%;
-    // right:50%;
-    // transform: translate(50%,-50%);
+  }
+
+   &__li {
+  max-width:40rem;
+  padding: 1rem 3rem;
+  border: 2px solid #000;
+  font-size: 2.25rem;
+  margin:1rem;
+      
+  &--z{
+      position:relative;
+      top:-68px;
+      left:-6px;
+  }
+
+          &--z:hover{
+          position:relative;
+          top:-61px;
+          left:0px;
+          background-color: $color-hover;
+        }
+  }
+
+  &__btn {
+  max-width:40rem;
+  padding: 1rem 3rem;
+  border: 2px solid #000;
+  font-size: 2.25rem;
+  margin:1rem;
+      
+  &--y{
+      position:relative;
+      top:-78px;
+      left:-6px;
+  }
+
+          &--y:hover{
+          position:relative;
+          top:-71px;
+          left:0px;
+          background-color: $color-hover;
+        }
+  }
+
+
+
+   &__joke{
+    font-size: 2.25rem;
   }
 }
 }

@@ -21,7 +21,7 @@
         input{
             all:unset;
          }
-        width:30%;
+        width:100%;
         margin: 0 auto;
         padding:1rem 0 0;
         text-transform: uppercase;
@@ -33,7 +33,7 @@
         z-index: 999;
         top:50%;
         right:50%; 
-        transform: translate(50% ,-40%);
+        transform: translate(50% ,-70%);
     }
 
     &__sign-title-wrap{
@@ -88,21 +88,67 @@
 
 @include medium{
     .header{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     padding: 3rem 2rem 0;
+
+    &__sign{
+      width:40%;
+      transform: translate(50% ,-40%);
+    }
 
     &__form-box{
      margin-bottom:1rem;
      margin-left: 3rem;
      margin-right: 3rem;
      @include flex(row, space-between, center);
+       font-size: 1.8rem;
+    }
+
+    &__delete-btn{
+    font-size: 1.8rem;
+    }
+
+    &__btn{
+      font-size: 1.8rem;
     }
     }
 }
 
 @include large{
     .header{
+
+    font-size: 2.25rem;
     padding-left:4rem;
     padding-right: 4rem;
+
+    &__li{
+        margin-left: 5rem; 
+    }
+
+    &__sign{
+      width:50%;
+      transform: translate(50% ,-50%);
+    }
+
+    &__sign-title{
+      padding: 1rem;
+      font-size: 3rem;
+    }
+
+    &__form-box{
+     margin-bottom:2rem;
+     margin-left: 5rem;
+     margin-right: 5rem;
+  
+     font-size: 2.25rem;
+    }
+
+    &__delete-btn{
+      font-size: 2.25rem;
+    }
+
+    &__btn{
+      font-size: 2.25rem;
+    }
     }
 }
