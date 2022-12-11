@@ -1,3 +1,5 @@
+export const BACK_END = process.env.REACT_APP_BACKEND_URL;
+
 export const DISNEY_URL = `https://api.disneyapi.dev/characters`;
 
 export const selectedByID_URL = (disneyID) => `${DISNEY_URL}/${disneyID}`;

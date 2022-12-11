@@ -5,8 +5,6 @@ import "./Drum.scss";
 
 export default function Drum (){
 
-
-
 return (
   <>
     <section className="drum">
@@ -20,38 +18,38 @@ return (
 );
 }
 
-function Pad ({clip}){
-  const [active, setActive]=useState(false);
-  const ref = useRef();
+    function Pad ({clip}){
+      const [active, setActive]=useState(false);
+      const ref = useRef();
 
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.keyCode === clip.keyCode) {
-        playSound();
-      }
-    };
+      useEffect(() => {
+        const handleKeyPress = (e) => {
+          if (e.keyCode === clip.keyCode) {
+            playSound();
+          }
+        };
 
-    window.addEventListener("keydown", handleKeyPress);
-    return () => {
-      document.addEventListener("keydown", handleKeyPress);
-    };
-  }, [clip.keyCode]);
+        window.addEventListener("keydown", handleKeyPress);
+        return () => {
+          document.addEventListener("keydown", handleKeyPress);
+        };
+      }, [clip.keyCode]);
 
 
 
-  const playSound = () => {
-    // console.log("ref.current", ref.current);
-    setActive(true);
-    setTimeout(()=>setActive(false),200);
-    const audioTag = ref.current;
-    audioTag.currentTime = 0;
-    audioTag.play();
-  };
+      const playSound = () => {
+        // console.log("ref.current", ref.current);
+        setActive(true);
+        setTimeout(()=>setActive(false),200);
+        const audioTag = ref.current;
+        audioTag.currentTime = 0;
+        audioTag.play();
+      };
 
-  return (
-    <div onClick={(e) => playSound(e)} className={`drum__key ${active?"drum__sound drum__playing":""}`}>
-      <audio ref={ref} src={clip.url} /> {clip.keyTrigger}
-    </div>
-  );
-}
+      return (
+        <div onClick={(e) => playSound(e)} className={`drum__key ${active?"drum__sound drum__playing":""}`}>
+          <audio ref={ref} src={clip.url} /> {clip.keyTrigger}
+        </div>
+      );
+    }
 

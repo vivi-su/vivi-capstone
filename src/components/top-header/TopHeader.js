@@ -9,16 +9,19 @@ export default function TopHeader (){
 
     return (
       <div className="topHeader">
-        <ul>
+     
           <Link className="topHeader__link" to={"disney"}>
-            <motion.img src={sun} alt="sun" 
-            whileHover={{scale:1.1}} className="topHeader__img" />{" "}
-            <li className="topHeader__li">
-              Check out <br />
-              <span className="topHeader__span">Disney</span>
-            </li>
+            <motion.img
+              src={sun}
+              alt="sun icon"
+              whileHover={{ scale: 1.1 }}
+              className="topHeader__img"
+            />{" "}
+            <p className="topHeader__p">
+            Disney</p>
+         
           </Link>
-        </ul>
+       
       </div>
     );
 }

@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { audioClips } from "../../utils/utils";
+import WhackAMole from "../../assets/images/whack-a-mole_logo.svg"
 import "./Whack.scss";
 
 const TIME = 30000;
@@ -66,10 +68,14 @@ export default function  Whack() {
         <div className="Whack__wrapper">
           {!play && !finish && (
             <>
-              <h1 className="Whack__title">Whack-a-mole</h1>
+              <img
+                src={WhackAMole}
+                alt="whack a mole logo"
+                className="Whack__title"
+              ></img>
               <div className="Whack__button-group">
                 <button onClick={startGame} className="Whack__btn">
-                  Play again
+                  Play
                 </button>
                 <button onClick={startElderlyGame} className="Whack__btn">
                   Elderly Mode
@@ -104,9 +110,12 @@ export default function  Whack() {
               </Moles>
             </div>
           )}
+          
           {finish && (
             <>
-              <Score value={score} />
+              <div className="Whack__record">
+                <Score value={score} />
+              </div>
               <div className="Whack__button-group">
                 <button onClick={startGame} className="Whack__btn">
                   Play again
@@ -135,10 +144,13 @@ const Mole = ({ points, delay, speed, onHit }) => {
   const bobRef = useRef(null);
   const pointsRef = useRef(points);
   const [hited, setHited] = useState(false);
+  const audioRef = useRef();
 
   const hit = () => {
     setHited(true);
     onHit(pointsRef.current);
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
   };
 
   useEffect(() => {
@@ -182,13 +194,15 @@ const Mole = ({ points, delay, speed, onHit }) => {
   return (
     <>
       <div className="Whack__mole-hole">
-        <button className="Whack__mole" ref={buttonRef} onClick={hit}></button>
+        <button className="Whack__mole" ref={buttonRef} onClick={hit}>
+          <audio ref={audioRef} src={audioClips[4].url}></audio>
+        </button>
       </div>
     </>
   );
 };
 
-const Score = ({ value }) => <div className="Whack__text">{`Score: ${value}`}</div>;
+const Score = ({ value }) => <div className="Whack__score">{`Score: ${value}`}</div>;
 
 const Timer = ({ time, interval = 1000, onEnd }) => {
   const [internalTime, setInternalTime] = useState(time);
@@ -207,7 +221,9 @@ const Timer = ({ time, interval = 1000, onEnd }) => {
     return () => clearTimeout(timerRef.current);
   }, [interval]);
 
-  return <span className="Whack__text">{`Time: ${internalTime / 1000}s`}</span>;
+  return (
+  <span className="Whack__time">{`Time: ${internalTime / 1000}s`}</span>
+  );
 };
  
 

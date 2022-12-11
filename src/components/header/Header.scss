@@ -1,0 +1,154 @@
+@use "./src/styles/basic" as *;
+@use "./src/styles/mixins" as *;
+@use "./src/styles/colors" as *;
+
+.header{
+    @include flex(row, flex-end, center);
+    max-width:1280px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 3rem 2rem 0;
+
+    &__li{
+        margin-left: 3rem;
+        font-weight: 600;
+    }
+
+    //---------form section----------
+
+    &__sign{
+        input{
+            all:unset;
+         }
+        width:100%;
+        margin: 0 auto;
+        padding:1rem 0 0;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        text-align: center;
+        background-color: #fff;
+        border:2px solid #000;
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        right:50%; 
+        transform: translate(50% ,-70%);
+    }
+
+    &__sign-title-wrap{
+   border-bottom: 2px solid #000;
+   @include flex(row, space-between, center);
+    padding-bottom:1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    }
+    
+    &__sign-title{
+     letter-spacing: 0.2rem;
+     font-weight: 600;
+    }
+
+    &__delete-btn{
+      background-color: #fff;
+      border:0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    &__form-sign{
+      margin-top: 1rem;
+    }
+
+    &__form-box{
+     margin-bottom:1rem;
+     margin-left: 2rem;
+     margin-right: 2rem;
+     @include flex(column, space-between, center);
+    }
+
+    &__btn{
+      background-color: #fff;
+      border:0;
+      padding: 1rem 0;
+      width:100%;
+      border-top:2px solid #000 ;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover{
+        background-color: $color-button;
+      }
+    }
+}
+
+
+
+@include medium{
+    .header{
+    font-size: 1.8rem;
+    padding: 3rem 2rem 0;
+
+    &__sign{
+      width:40%;
+      transform: translate(50% ,-40%);
+    }
+
+    &__form-box{
+     margin-bottom:1rem;
+     margin-left: 3rem;
+     margin-right: 3rem;
+     @include flex(row, space-between, center);
+       font-size: 1.8rem;
+    }
+
+    &__delete-btn{
+    font-size: 1.8rem;
+    }
+
+    &__btn{
+      font-size: 1.8rem;
+    }
+    }
+}
+
+@include large{
+    .header{
+
+    font-size: 2.25rem;
+    padding-left:4rem;
+    padding-right: 4rem;
+
+    &__li{
+        margin-left: 5rem; 
+    }
+
+    &__sign{
+      width:50%;
+      transform: translate(50% ,-50%);
+    }
+
+    &__sign-title{
+      padding: 1rem;
+      font-size: 3rem;
+    }
+
+    &__form-box{
+     margin-bottom:2rem;
+     margin-left: 5rem;
+     margin-right: 5rem;
+  
+     font-size: 2.25rem;
+    }
+
+    &__delete-btn{
+      font-size: 2.25rem;
+    }
+
+    &__btn{
+      font-size: 2.25rem;
+    }
+    }
+}
