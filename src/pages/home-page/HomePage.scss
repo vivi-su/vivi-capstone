@@ -145,8 +145,8 @@
   }
 
    &__back-img{
-    width:5rem;
-    height:5rem;
+    width:3.5rem;
+    height:3.5rem;
    }
 
   &__li {
@@ -209,6 +209,11 @@
     padding-left: 4rem;
     padding-right: 4rem;
   }
+
+    &__back-img{
+  width:5rem;
+  height:5rem;
+    }
 
    &__li {
   max-width:40rem;
