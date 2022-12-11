@@ -36,12 +36,10 @@ export default function HomePage() {
     }
   }
 
-
-
   return (
     <>
       <main className="home">
-        <section className="home__top">
+        <section className="home__major">
           <div className="home__half">
             <div className="home__left">
               <TopHeader />

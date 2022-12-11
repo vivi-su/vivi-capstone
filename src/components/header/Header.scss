@@ -4,18 +4,20 @@
 
 .header{
     @include flex(row, flex-end, center);
+    max-width:1280px;
+    margin: 0 auto;
     font-size: 1.2rem;
     text-transform: uppercase;
-    padding: 3rem 4rem;
+    padding: 3rem 2rem 0;
 
     &__li{
         margin-left: 3rem;
         font-weight: 600;
     }
 
-    //---------signup section----------
+    //---------form section----------
 
-    &__signup{
+    &__sign{
         input{
             all:unset;
          }
@@ -23,7 +25,7 @@
         margin: 0 auto;
         padding:1rem 0 0;
         text-transform: uppercase;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         text-align: center;
         background-color: #fff;
         border:2px solid #000;
@@ -33,15 +35,28 @@
         right:50%; 
         transform: translate(50% ,-40%);
     }
+
+    &__sign-title-wrap{
+   border-bottom: 2px solid #000;
+   @include flex(row, space-between, center);
+    padding-bottom:1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    }
     
-    &__signup-title{
-     padding-bottom:1rem;
-     border-bottom: 2px solid #000;
+    &__sign-title{
      letter-spacing: 0.2rem;
      font-weight: 600;
     }
 
-    &__form-signup{
+    &__delete-btn{
+      background-color: #fff;
+      border:0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    &__form-sign{
       margin-top: 1rem;
     }
 
@@ -74,6 +89,7 @@
 @include medium{
     .header{
     font-size: 1.4rem;
+    padding: 3rem 2rem 0;
 
     &__form-box{
      margin-bottom:1rem;
@@ -81,5 +97,12 @@
      margin-right: 3rem;
      @include flex(row, space-between, center);
     }
+    }
+}
+
+@include large{
+    .header{
+    padding-left:4rem;
+    padding-right: 4rem;
     }
 }

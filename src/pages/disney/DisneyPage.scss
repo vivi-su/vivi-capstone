@@ -10,12 +10,18 @@
   background-repeat: no-repeat;
   background-size: fill;
   background-position: bottom;
-  padding-top: 5rem;
   padding-bottom: 5rem;
+
+  &__wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+  }
 
   &__form{
     @include flex(column, center, flex-end);
-    width:80%;
     margin:0 auto;
     margin-bottom: 1rem;
     flex-basis: 50%;
@@ -67,7 +73,6 @@
   }
 
   &__container{
-    width: 80%;
     margin: 0 auto;
     border: 2px solid #000;
   }
@@ -145,6 +150,11 @@
   
      height:100%;
 
+  &__wrap{
+  padding-left:2rem;
+  padding-right: 2rem;
+  }
+
   &__form-group{
     margin-bottom:0.5rem;
     @include flex(row, space-between, center);
@@ -168,6 +178,10 @@
   
      height:120vh;
    
+    &__wrap{
+    padding-left:4rem;
+    padding-right:4rem;
+    }
 
     &__pop{
         transform: translate(-50%, -80%);

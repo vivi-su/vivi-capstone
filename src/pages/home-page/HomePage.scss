@@ -11,6 +11,13 @@
   background-size: fill;
   background-position: bottom;
 
+  &__major{
+    max-width:1280px;
+    margin:0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   &__half{
     @include flex(row, space-between, center);
   }
@@ -61,7 +68,6 @@
   &__top{
     margin:0 auto;
     max-width: 80%;
-    // padding-bottom: 10rem;
   }
 
    &__bg{
@@ -75,6 +81,11 @@
       ul{
         @include flex(row,flex-start, center);
       }
+
+  &__major{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 
   &__li {
   max-width:25rem;
@@ -103,4 +114,19 @@
   
 }
   }
+}
+
+@include large{
+.home{
+
+  &__major{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    // width: 100%;
+    // position: absolute;
+    // top:43%;
+    // right:50%;
+    // transform: translate(50%,-50%);
+  }
+}
 }

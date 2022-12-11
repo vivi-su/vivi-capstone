@@ -7,7 +7,9 @@
     width:100%;
     font-size: 1.2rem;
     text-transform: uppercase;
-    padding: 3rem 4rem;
+    padding: 3rem 4rem 0;
+    max-width: 1280px;
+    margin:0 auto;
 
     &__p{
         margin-left: 3rem;
