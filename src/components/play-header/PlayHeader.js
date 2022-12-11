@@ -1,10 +1,11 @@
 import {Link} from "react-router-dom";
+import {ReactComponent as BackIcon} from "../../assets/images/back.svg";
 import "./PlayHeader.scss";
 
 export default function PlayHeader(){
     return (
       <>
-        <section>
+        <section className="home__row-wrap">
           <ul>
             <Link to={"drum"}>
               <li className="home__li">Drumming on the Keyboard</li>
@@ -19,9 +20,13 @@ export default function PlayHeader(){
               <li className="home__li home__li--z">Whack a mole</li>
             </Link>
           </ul>
-         
+
+          <Link to={"/"}>
+            <button className="home__back-btn">
+              <BackIcon className="home__back-img" />
+            </button>
+          </Link>
         </section>
-    
       </>
     );
 }
