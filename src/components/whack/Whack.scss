@@ -124,9 +124,13 @@ max-height:30rem;
 @include medium{
   .Whack{
 
+    &__button-group{
+    margin-top: 0;
+    }
+
     &__title {
-    margin-top: 6rem;
-    width:30rem;
+    margin-top: 0;
+    width:25rem;
     max-width:30rem;
     max-height:30rem;
   }
@@ -143,7 +147,7 @@ max-height:30rem;
 &__btn {
   max-width:25rem;
   padding: 1rem 2rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
  &__mole {
@@ -161,6 +165,12 @@ max-height:30rem;
 
 @include large{
   .Whack{
+
+    &__title {
+    width:27rem;
+    max-width:30rem;
+    max-height:30rem;
+  }
 
     &__btn {
       max-width:25rem;
