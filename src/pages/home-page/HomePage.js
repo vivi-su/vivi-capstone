@@ -63,7 +63,10 @@ export default function HomePage() {
           <PlayHeader />
           <section className="home__joke-wrap">
             <div className="home__btn-wrap">
-              <button onClick={() => getJoke()} className="home__btn">
+              <button
+                onClick={() => getJoke()}
+                className="home__btn"
+              >
                 Give me a Joke
               </button>
               <button
@@ -86,7 +89,6 @@ export default function HomePage() {
                 </button>
               </div>
             )}
-
           </section>
         </section>
       </main>
