@@ -22,7 +22,7 @@ export const useOnDraw = (onDraw) => {
           if (onDraw) {
           onDraw(ctx, point, prevPointRef.current, hue);
           prevPointRef.current = point;
-          console.log(point, hue);
+
           setHue(hue++);
           if(hue>360){
             setHue(0);
