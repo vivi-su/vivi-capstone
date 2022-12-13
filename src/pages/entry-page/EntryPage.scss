@@ -16,31 +16,14 @@
   
   color:$color-primary;
 
-  &__wrapper{
-      @include flex(column,space-between, center);
-    max-width:1280px;
-    margin: 0 auto;
-  }
-
-  &__img-wrapper{
-  @include flex(row, space-between, center);
-  width:100%;
-  }
-
   &__planet{
       width:15em;
       height:15rem;
-      align-self: end;
-      margin-right: 2rem;
    }
 
    &__star{
       width:15em;
       height:15rem;
-      align-self: start;
-      margin-left: 4rem;
-      position: relative;
-      top:10rem;
    }
 
     &__logo{
@@ -51,20 +34,10 @@
       max-width:15rem; 
     }
 
-    &__bg{
-    width:100%;
-   }
-
-    &__title{
-     text-align: center;
-     padding-top: 8rem;
-     position: absolute;
-    }
 
     &__tag{
       font-size: 1.3rem;
       font-weight: 600;
-      padding-top: 2rem;
     }
 
     &__explore{
@@ -75,20 +48,9 @@
       padding:0.8rem 4rem;
       outline:0;
       border:2px solid $color-primary;
-      background-color: $color-button;
-      position:absolute;
-
-      &--z{
-      position:relative;
-      top:-3px;
-      left:-3px;
-      }
-
-    
-        &--z:hover{
-          position:relative;
-          top:0;
-          left:0;
+      background-color: #DFF250;
+  
+      &:hover{
           background-color: $color-hover;
         }
       
@@ -103,17 +65,11 @@
    &__planet{
       width:25em;
       height:25rem;  
-      margin-right: 8rem;
    }
 
     &__star{
       width: 20rem;
       height:20rem;
-      margin-left: 8rem;
-    }
-
-    &__title{
-      padding-bottom: 5rem;
     }
 
     &__logo{

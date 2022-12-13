@@ -10,6 +10,7 @@
   background-repeat: no-repeat;
   background-size: fill;
   background-position: bottom;
+  padding-top: 3rem;
   padding-bottom: 5rem;
 
   &__wrap{
@@ -153,8 +154,9 @@
  @include medium{
 
     .disney{
-  
+     
      height:100vh;
+     padding-top: 4rem;
 
   &__wrap{
   padding-left:2rem;
@@ -202,7 +204,9 @@
     .disney{
   
      height:100vh;
-   
+     padding-top: 5rem;
+
+
     &__wrap{
     padding-left:4rem;
     padding-right:4rem;
