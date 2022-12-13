@@ -11,6 +11,14 @@
   background-size: fill;
   background-position: bottom;
 
+  &__star{
+    width:15em;
+    height:15rem;
+    position: relative;
+ 
+     
+  }
+
   &__major{
     max-width:1280px;
     margin:0 auto;
@@ -88,7 +96,7 @@
 }
 
 &__joke-wrap{
-  @include flex(column,center,flex-start);
+  @include flex(column,flex-start,flex-start);
 }
 
 &__btn-wrap{
@@ -168,6 +176,7 @@
           background-color: $color-hover;
         }
 }
+
 
 &__joke-wrap{
   @include flex(row,flex-start,center);

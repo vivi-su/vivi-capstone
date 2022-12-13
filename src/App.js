@@ -95,9 +95,10 @@ function App() {
   
 
   return (
-    <section className={showSignup || showSignin ? " " : "App"}>
+    <>
+      <section className={showSignup || showSignin ? " " : "App"}>
         <BrowserRouter>
-          <Header
+          <Header 
             showSignup={showSignup}
             setShowSignup={setShowSignup}
             showSignin={showSignin}
@@ -115,19 +116,20 @@ function App() {
               <Route path="/profile" element={<EntryPage />} />
               <Route path="/play/disney" element={<DisneyPage />} />
               <Route path="/play/disney/:disneyID" element={<DisneyPage />} />
-              
+
               <Route path="/play" element={<HomePage />}>
                 <Route index element={<Navigate replace to="drum" />} />
                 <Route path="drum" element={<Drum />} />
                 <Route path="draw" element={<Draw />} />
                 <Route path="whack" element={<Whack />} />
               </Route>
-              
+
               <Route path="*" element={<EntryPage />} />
             </Routes>
           </section>
         </BrowserRouter>
       </section>
+    </>
   );
 }
 

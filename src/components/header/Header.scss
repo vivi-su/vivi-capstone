@@ -9,6 +9,10 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 3rem 2rem 0;
+    position: fixed;
+    z-index: 99999;
+    right:0;
+
 
     &__li{
         margin-left: 3rem;
@@ -91,6 +95,7 @@
     .header{
     font-size: 1.8rem;
     padding: 3rem 2rem 0;
+ 
 
     &__sign{
       width:40%;
