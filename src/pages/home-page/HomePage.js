@@ -61,34 +61,33 @@ export default function HomePage() {
           </div>
           <Outlet />
           <PlayHeader />
-          <section className="home__joke-wrap">
-            <div className="home__btn-wrap">
-              <button
-                onClick={() => getJoke()}
-                className="home__btn"
-              >
-                Give me a Joke
-              </button>
-              <button
-                onClick={() => getJoke()}
-                className="home__btn home__btn--y"
-              >
-                Give me a Joke
-              </button>
-            </div>
-            {show && (
+          <section>
+            <div className="home__joke-wrap">
               <div className="home__btn-wrap">
-                <button onClick={() => setShow(false)} className="home__btn">
-                  I don't want a Joke
+                <button onClick={() => getJoke()} className="home__btn">
+                  Give me a Joke
                 </button>
                 <button
-                  onClick={() => setShow(false)}
+                  onClick={() => getJoke()}
                   className="home__btn home__btn--y"
                 >
-                  I don't want a Joke
+                  Give me a Joke
                 </button>
               </div>
-            )}
+              {show && (
+                <div className="home__btn-wrap">
+                  <button onClick={() => setShow(false)} className="home__btn">
+                    I don't want a Joke
+                  </button>
+                  <button
+                    onClick={() => setShow(false)}
+                    className="home__btn home__btn--y"
+                  >
+                    I don't want a Joke
+                  </button>
+                </div>
+              )}
+            </div>
           </section>
         </section>
       </main>

@@ -3,12 +3,33 @@
 @use "./src/styles/colors" as *;
 
 .header{
-    @include flex(row, flex-end, center);
-    max-width:1280px;
-    margin: 0 auto;
+  max-width:1280px;
+  margin: 0 auto; 
+  
+  //allow header floating at top, but constraints the width and able to use flex
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 9999;
+  justify-content: flex-end;
+  
+
+    
+    
+    &__ul{
+    display: flex;
+    
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 3rem 2rem 0;
+
+  
+
+    }
+
 
     &__li{
         margin-left: 3rem;
@@ -89,8 +110,13 @@
 
 @include medium{
     .header{
+
+
+    &__ul{
     font-size: 1.8rem;
     padding: 3rem 2rem 0;
+    }
+ 
 
     &__sign{
       width:40%;
@@ -119,8 +145,14 @@
     .header{
 
     font-size: 2.25rem;
+    // padding-left:4rem;
+    // padding-right: 4rem;
+
+    &__ul{
+    font-size: 2.25rem;
     padding-left:4rem;
     padding-right: 4rem;
+    }
 
     &__li{
         margin-left: 5rem; 
