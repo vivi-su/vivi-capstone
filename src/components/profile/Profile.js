@@ -33,12 +33,16 @@ export default function Profile({ haveToken, setHaveToken }) {
   return (
     <>
       {haveToken && (
-        <div className="profile">
-          <p className="profile__p">Hello {userInfo.name}</p>
-          <button onClick={handleSignout} className="profile__btn">
-            Sign Out
-          </button>
-        </div>
+        <section className="profile">
+          <div className="profile__wrap">
+            <p className="profile__p">
+              😃 <span>&nbsp;</span> Hello {userInfo.name}
+            </p>
+            <button onClick={handleSignout} className="profile__btn">
+              Sign Out
+            </button>
+          </div>
+        </section>
       )}
     </>
   );
