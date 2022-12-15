@@ -12,10 +12,24 @@ export default function  Whack() {
   const [play, setPlay] = useState(false);
   const [finish, setFinish] = useState(false);
   const [moles, setMoles] = useState([]);
+  const [isAudioMonsterPlaying, setIsAudioMonsterPlaying] = useState(false);
+  const [isAudioCookiePlaying, setIsAudioCookiePlaying] = useState(false);
+  const [isAudioSlimePlaying, setIsAudioSlimePlaying] = useState(false);
+
+  const MONSTER_URL = "/monster.mp3";
+  const COOKIE_URL = "/cookie.mp3";
+  const SLIME_URL = "/slime.mp3";
+
+  const audioMonster = useRef();
+  const audioCookie = useRef();
+  const audioSlime = useRef();
 
   const endGame = () => {
     setPlay(false);
     setFinish(true);
+    setIsAudioMonsterPlaying(false);
+    setIsAudioCookiePlaying(false);
+    setIsAudioSlimePlaying(false);
   };
 
   const startGame = () => {
@@ -23,21 +37,48 @@ export default function  Whack() {
     setPlay(true);
     setFinish(false);
     setMoles(makeMoles());
+    setIsAudioMonsterPlaying(true);
   };
+
+  useEffect(() => {
+    if (isAudioMonsterPlaying) {
+      audioMonster.current.play();
+    } else {
+      audioMonster.current.pause();
+    }
+  }, [isAudioMonsterPlaying]);
 
   const startElderlyGame = () => {
     setScore(0);
     setPlay(true);
     setFinish(false);
     setMoles(makeElderlyMoles());
+    setIsAudioCookiePlaying(true);
   };
+
+  useEffect(() => {
+    if (isAudioCookiePlaying) {
+      audioCookie.current.play();
+    } else {
+      audioCookie.current.pause();
+    }
+  }, [isAudioCookiePlaying]);
 
   const startCrazyGame = () => {
     setScore(0);
     setPlay(true);
     setFinish(false);
     setMoles(makeCrazyMoles());
+    setIsAudioSlimePlaying(true);
   };
+
+  useEffect(() => {
+    if(isAudioSlimePlaying){
+      audioSlime.current.play();
+    }else{
+      audioSlime.current.pause();
+    }
+  }, [isAudioSlimePlaying]);
 
   const makeMoles = () =>
     new Array(6).fill().map(() => ({
@@ -64,6 +105,9 @@ export default function  Whack() {
 
   return (
     <>
+      <audio ref={audioMonster} src={MONSTER_URL} />
+      <audio ref={audioCookie} src={COOKIE_URL} /> 
+      <audio ref={audioSlime} src={SLIME_URL} />
       <div className="Whack__background">
         <div className="Whack__wrapper">
           {!play && !finish && (
@@ -110,7 +154,7 @@ export default function  Whack() {
               </Moles>
             </div>
           )}
-          
+
           {finish && (
             <>
               <div className="Whack__record">
