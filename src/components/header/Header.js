@@ -25,7 +25,6 @@ export default function Header({
   return (
     <>
       {!haveToken && (
-        
         <nav className="header">
           <ul className="header__ul">
             <Link to="/signup">

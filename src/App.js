@@ -71,11 +71,7 @@ function App() {
           .then((res) => {
             console.log(res);
             if (res.data.token) {
-              console.log(res.data.token);
-
               sessionStorage.setItem("token", res.data.token);
-
-              console.log(sessionStorage.setItem("token", res.data.token));
               setHaveToken(true);
               setShowSignin(false);
               setIsSigninError(false);
@@ -98,7 +94,7 @@ function App() {
     <>
       <section className={showSignup || showSignin ? " " : "App"}>
         <BrowserRouter>
-          <Header 
+          <Header
             showSignup={showSignup}
             setShowSignup={setShowSignup}
             showSignin={showSignin}

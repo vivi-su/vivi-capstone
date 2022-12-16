@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
 import {ReactComponent as BackIcon} from "../../assets/images/back.svg";
-import "./PlayHeader.scss";
 import { motion} from "framer-motion";
 import star from "../../assets/images/star.svg";
 
