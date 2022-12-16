@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import ReactConfetti from "react-confetti";
 import { audioClips } from "../../utils/utils";
-import WhackAMole from "../../assets/images/whack-a-mole_logo.svg"
+import WhackAMole from "../../assets/images/whack-a-mole_logo.svg";
 import "./Whack.scss";
 
 const TIME = 30000;
@@ -16,6 +17,14 @@ export default function  Whack() {
   const [isAudioCookiePlaying, setIsAudioCookiePlaying] = useState(false);
   const [isAudioSlimePlaying, setIsAudioSlimePlaying] = useState(false);
 
+  const [windowDimension, setWindowDimension] = useState({
+    width: 1200,
+    height: 500,
+  });
+
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [isScoreGood, setIsScoreGood]= useState(false);
+
   const MONSTER_URL = "/monster.mp3";
   const COOKIE_URL = "/cookie.mp3";
   const SLIME_URL = "/slime.mp3";
@@ -24,7 +33,33 @@ export default function  Whack() {
   const audioCookie = useRef();
   const audioSlime = useRef();
 
+    const detectSize = () => {
+      setWindowDimension({
+        width:1200,
+        height: 500,
+      });
+    };
+
+    useEffect(() => {
+      if (isScoreGood) {
+        setShowConfetti(true);
+        window.addEventListener("resize", detectSize);
+        const timer = setTimeout(() => {
+          setShowConfetti(false);
+        }, 4000);
+
+        return () => {
+          window.removeEventListener("resize", detectSize);
+          clearTimeout(timer);
+        };
+      }
+    }, [finish]);
+
   const endGame = () => {
+    setIsScoreGood(false);
+    if(score >= 1000){
+    setIsScoreGood(true);
+  }
     setPlay(false);
     setFinish(true);
     setIsAudioMonsterPlaying(false);
@@ -34,6 +69,7 @@ export default function  Whack() {
 
   const startGame = () => {
     setScore(0);
+    setIsScoreGood(false);
     setPlay(true);
     setFinish(false);
     setMoles(makeMoles());
@@ -50,6 +86,7 @@ export default function  Whack() {
 
   const startElderlyGame = () => {
     setScore(0);
+    setIsScoreGood(false);
     setPlay(true);
     setFinish(false);
     setMoles(makeElderlyMoles());
@@ -66,6 +103,7 @@ export default function  Whack() {
 
   const startCrazyGame = () => {
     setScore(0);
+    setIsScoreGood(false);
     setPlay(true);
     setFinish(false);
     setMoles(makeCrazyMoles());
@@ -103,10 +141,11 @@ export default function  Whack() {
 
   const onHit = (points) => setScore(score + points);
 
+
   return (
     <>
       <audio ref={audioMonster} src={MONSTER_URL} />
-      <audio ref={audioCookie} src={COOKIE_URL} /> 
+      <audio ref={audioCookie} src={COOKIE_URL} />
       <audio ref={audioSlime} src={SLIME_URL} />
       <div className="Whack__background">
         <div className="Whack__wrapper">
@@ -154,7 +193,6 @@ export default function  Whack() {
               </Moles>
             </div>
           )}
-
           {finish && (
             <>
               <div className="Whack__record">
@@ -173,6 +211,13 @@ export default function  Whack() {
               </div>
             </>
           )}
+
+          {showConfetti&&
+          <ReactConfetti
+            width={windowDimension.width}
+            height={windowDimension.height}
+          />}
+
         </div>
       </div>
     </>
@@ -270,5 +315,6 @@ const Timer = ({ time, interval = 1000, onEnd }) => {
   );
 };
  
+
 
 
