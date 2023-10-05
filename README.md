@@ -27,13 +27,13 @@ GSAP
 
 ## API Reference
 
-'{
+`{
   filterCharacter: 'https://api.disneyapi.dev/character?queryParams',
 
   getAllCharacters: 'https://api.disneyapi.dev/characters',
   
   getOneCharacter: 'https://api.disneyapi.dev/characters/:id'
-}'
+}`
 
 
 ## Developer Installation Instructions
