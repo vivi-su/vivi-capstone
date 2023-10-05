@@ -4,6 +4,7 @@
 A children’s entertainment website that provides them a variety of fun games.
 
 - View website here:  https://vivi-capstone.netlify.app/
+- View Backend Repo here:  https://github.com/vivi-su/vivi-capstone-server
 
 ![Kids Fun Zone](https://github.com/vivi-su/vivi-capstone/assets/81454201/c927381e-d4ed-4aee-b915-53f1887461ab)
 
