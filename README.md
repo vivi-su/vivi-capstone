@@ -4,11 +4,17 @@
 A children’s entertainment website that provides them a variety of fun games.
 
 - View website here:  https://vivi-capstone.netlify.app/
-- View Backend Repo here:  https://github.com/vivi-su/vivi-capstone-server
 
 ![Kids Fun Zone](https://github.com/vivi-su/vivi-capstone/assets/81454201/c927381e-d4ed-4aee-b915-53f1887461ab)
 
+- View Backend Repo here:  https://github.com/vivi-su/vivi-capstone-server
 
+## Overview
+**Kid's Fun Zone** is a capstone project in Web development program at @BrainStation Vancouver. The primary aim behind creating this application was to delve deep into the inner workings of JavaScript within a React-based environment.
+
+This application features three entertaining games:**Drumming on the keyboard**,**Drawing on the Canva** and **Whack-a-Mole**. While I possessed a basic understanding of pure vanilla JavaScript for these games, I was relatively new to working with React.
+
+To further enhance the application's personalization, I implemented JWT for authentication purposes and incorporated fun jokes into backend database, and integrated beloved Disney charactors from the Disney API. Additionally, I leveraged Three.js and Gasp.js for animation, injecting a dynnamica and engaging quality into thie app.
 
 ## Tech Stack
 
